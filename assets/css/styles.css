@@ -41,6 +41,7 @@ body{
     border-radius: 15px;
     width: 150px;
     height: auto;
+    border: solid #f2f55e 2px;
 }
 
 .healthArea{
