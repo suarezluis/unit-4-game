@@ -1,0 +1,88 @@
+body{
+   background: url("../images/motherboard.jpg" ); 
+    
+}
+.gameArea{
+    
+    text-align: center;
+    background: url("../images/castle0.png") center no-repeat;
+    width: 100%;
+    height: 1000px;
+    
+}
+
+.sfLogoArea{
+    
+    text-align: center;    
+    
+}
+
+.sfLogo{
+    width: 15%;
+}
+
+.osEdition{
+    width: 10%;
+    margin-left: -5%
+}
+
+.health{
+    text-align: center;
+    color: yellow;
+
+}
+
+.pickArea{
+    text-align: center;
+}
+
+.character{
+    margin: 10px;
+    border-radius: 15px;
+    width: 150px;
+    height: auto;
+}
+
+.healthArea{
+    
+    
+    font-size: 30px;
+    color: yellow;
+    
+    
+}
+
+.playerHealth{
+    display: inline-block;
+    text-align: right;
+    width: 20%;
+    height: 30px;
+    background-color: yellow;
+
+}
+
+.vs{
+    display: inline-block;
+    font-size: 50px;
+    
+}
+.playerDamage{
+    display: inline-block;
+    background-color: red;
+    height: 30px;
+    width: 10%;
+    
+}
+.enemyHealth{
+    display: inline-block;
+    text-align: right;
+    width: 20%;
+    height: 30px;
+    background-color: yellow;}
+
+.enemyDamage{
+    display: inline-block;
+    background-color: red;
+    height: 30px;
+    width: 10%;
+}
