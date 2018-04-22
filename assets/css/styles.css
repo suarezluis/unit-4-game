@@ -1,14 +1,14 @@
 body{
-   background: url("../images/motherboard.jpg" ); 
+   background: url("../images/motherboard.jpg" );
+    
     
 }
 .gameArea{
-    
+    margin-top: -10px;
     text-align: center;
     background: url("../images/castle0.png") center no-repeat;
     
-    height: 1000px;
-    
+    background-position: center; 
 }
 
 .sfLogoArea{
