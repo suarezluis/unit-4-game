@@ -1,3 +1,4 @@
+//Luis Suarez
 var characters = ["win", "mac", "ubu", "and"];
 var playerPicked = false;
 var enemyPicked = false;
