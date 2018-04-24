@@ -1,4 +1,11 @@
+
+
 //Luis Suarez
+var music = new Audio('assets/music/music.mp3');
+var youWin = new Audio('assets/sfx/youwin.mp3');
+var youLose = new Audio('assets/sfx/youlose.mp3');
+var fightClick = new Audio('assets/sfx/fight.mp3');
+var select = new Audio('assets/sfx/select.wav');
 var characters = ["win", "mac", "ubu", "and"];
 var playerPicked = false;
 var enemyPicked = false;
@@ -12,6 +19,7 @@ var mac = new character("McOS", 100, 10);
 var ubu = new character("Ubuntu", 160, 4);
 var and = new character("Android", 120, 8);
 
+music.play()
 play();
 
 // Defining function to run game
@@ -38,6 +46,8 @@ function fight() {
   $(".btn").css({ visibility: "visible", opacity: "1" });
   displayInstructions("Click [ Fight! ] to attack...");
   $(".btn").on("click", function() {
+    fightClick.play();
+    
     $(".playerArea").animate({ margin: "0 -150px" }, 500);
     $(".enemyArea").animate({ margin: "0 -150px" }, 500);
     $(".playerArea").animate({ margin: "0 0" }, 500);
@@ -56,6 +66,7 @@ function fight() {
       function() {}
     );
     if (currentPlayer.health <= 0) {
+      youLose.play();
       $(".btn").off("click"),
         $(".btn").css({ visibility: "visible", opacity: "0" });
       displayInstructions(
@@ -63,6 +74,7 @@ function fight() {
       );
     }
     if (currentEnemy.health <= 0) {
+      youWin.play();
       $(".btn").off("click");
       $(".btn").css({ visibility: "visible", opacity: "0" });
       displayInstructions(
@@ -110,6 +122,7 @@ function displayInstructions(instruction) {
 function pickPlayer() {
   displayInstructions("Pick your OS...");
   $(".player").on("click", function() {
+    select.play();
     if ($(this).attr("value") === "win") {
       $(".playerCharacter").attr("src", "assets/images/win.gif");
       $(".playerImage").css({ visibility: "visible", opacity: "1" });
@@ -178,6 +191,7 @@ function pickEnemy() {
   }
 
   $(".enemy").on("click", function() {
+    select.play();
     $(".enemyDamage").animate({ width: "0%" }, 800, function() {});
 
     if ($(this).attr("value") === "win") {

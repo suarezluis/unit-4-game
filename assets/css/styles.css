@@ -1,3 +1,7 @@
+#music{
+  display: none;
+}
+
 body {
   background: url("../images/motherboard.jpg");
   margin: 0;
