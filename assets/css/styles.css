@@ -36,6 +36,7 @@ body {
 
 .pickArea {
   text-align: center;
+  height: 150px;
 }
 
 .character {
@@ -125,3 +126,5 @@ body {
   opacity: 0;
   transition: opacity 1s;
 }
+
+
