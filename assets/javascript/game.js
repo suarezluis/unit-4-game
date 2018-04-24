@@ -1,11 +1,9 @@
-
-
-//Luis Suarez
-var music = new Audio('assets/music/music.mp3');
-var youWin = new Audio('assets/sfx/youwin.mp3');
-var youLose = new Audio('assets/sfx/youlose.mp3');
-var fightClick = new Audio('assets/sfx/fight.mp3');
-var select = new Audio('assets/sfx/select.wav');
+//Programmed by Luis Suarez
+var music = new Audio("assets/music/music.mp3");
+var youWin = new Audio("assets/sfx/youwin.mp3");
+var youLose = new Audio("assets/sfx/youlose.mp3");
+var fightClick = new Audio("assets/sfx/fight.mp3");
+var select = new Audio("assets/sfx/select.wav");
 var characters = ["win", "mac", "ubu", "and"];
 var playerPicked = false;
 var enemyPicked = false;
@@ -14,12 +12,12 @@ var currentEnemy;
 var enemiesDefeated = 0;
 // Building initial ogject caracters
 
-var win = new character("Windows", 140, 6);
+var win = new character("Windows", 120, 16);
 var mac = new character("McOS", 100, 10);
-var ubu = new character("Ubuntu", 160, 4);
-var and = new character("Android", 120, 8);
+var ubu = new character("Ubuntu", 160, 14);
+var and = new character("Android", 140, 18);
 
-music.play()
+music.play();
 play();
 
 // Defining function to run game
@@ -47,7 +45,7 @@ function fight() {
   displayInstructions("Click [ Fight! ] to attack...");
   $(".btn").on("click", function() {
     fightClick.play();
-    
+
     $(".playerArea").animate({ margin: "0 -150px" }, 500);
     $(".enemyArea").animate({ margin: "0 -150px" }, 500);
     $(".playerArea").animate({ margin: "0 0" }, 500);
@@ -55,6 +53,7 @@ function fight() {
     currentPlayer.health -= currentEnemy.attack;
     currentEnemy.health -= currentPlayer.attack;
     currentPlayer.attack += currentPlayer.initialAttack;
+    updateStats("a");
     $(".playerDamage").animate(
       { width: currentPlayer.damagePercentage() + "%" },
       800,
@@ -135,6 +134,7 @@ function pickPlayer() {
       $(".player").off("click");
       currentPlayer = win;
       playerPicked = true;
+      updateStats("p");
       play();
     }
     if ($(this).attr("value") === "mac") {
@@ -149,6 +149,7 @@ function pickPlayer() {
       $(".player").off("click");
       currentPlayer = mac;
       playerPicked = true;
+      updateStats("p");
       play();
     }
     if ($(this).attr("value") === "ubu") {
@@ -163,6 +164,7 @@ function pickPlayer() {
       $(".player").off("click");
       currentPlayer = ubu;
       playerPicked = true;
+      updateStats("p");
       play();
     }
     if ($(this).attr("value") === "and") {
@@ -177,10 +179,19 @@ function pickPlayer() {
       $(".player").off("click");
       currentPlayer = and;
       playerPicked = true;
+      updateStats("p");
       play();
     }
   });
 }
+
+//Function to update stats
+function updateStats(option){
+  if(option == "p" || option == "a"){$(".statsPlayer").html( "Health: "+currentPlayer.health+" Attack: " + currentPlayer.attack );}
+  if(option == "e" || option == "a"){$(".statsEnemy").html( "Health: "+currentEnemy.health+" Attack: " + currentEnemy.attack );}
+}
+
+
 //function to pick next enemy's character
 function pickEnemy() {
   displayInstructions("Pick your enemy OS...");
@@ -204,6 +215,7 @@ function pickEnemy() {
       $(".enemy").off("click");
       currentEnemy = win;
       enemyPicked = true;
+      updateStats("e");
       play();
     }
     if ($(this).attr("value") === "mac") {
@@ -215,6 +227,7 @@ function pickEnemy() {
       $(".enemy").off("click");
       currentEnemy = mac;
       enemyPicked = true;
+      updateStats("e");
       play();
     }
     if ($(this).attr("value") === "ubu") {
@@ -226,6 +239,7 @@ function pickEnemy() {
       $(".enemy").off("click");
       currentEnemy = ubu;
       enemyPicked = true;
+      updateStats("e");
       play();
     }
     if ($(this).attr("value") === "and") {
@@ -237,6 +251,7 @@ function pickEnemy() {
       $(".enemy").off("click");
       currentEnemy = and;
       enemyPicked = true;
+      updateStats("e");
       play();
     }
   });

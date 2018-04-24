@@ -33,18 +33,43 @@ body {
   font-size: 30px;
 }
 
+.winStats{
+  color: yellow;
+  font-size: 30px;
+  display: none;
+}
+
+.winDiv:hover .winStats {
+  display: block;}
+
 .health {
   text-align: center;
   color: yellow;
 }
 
 .pickArea {
+  
   text-align: center;
   height: 150px;
 }
 
+div.xp{
+  display:inline-block;
+  height: 190px;
+}
+
+p.xp{
+  display: block;
+  margin: auto;
+  color:  yellow;
+  
+  
+  font-size: 30px;
+  
+}
+
 .character {
-  margin: 10px;
+  margin: 0 10px;
   border-radius: 15px;
   width: 150px;
   height: auto;
@@ -62,6 +87,7 @@ body {
   text-align: right;
   width: 20%;
   height: 30px;
+  color: black;
   background-color: yellow;
 }
 
@@ -106,8 +132,21 @@ body {
   cursor: pointer;
 }
 
-.fightArea {
+.statsDiv {
+  margin: auto;
+  width: 45%;
+  margin-top: -70px;
 }
+
+.stats {
+  
+  width: 49%;
+  text-align: center;
+  display: inline-block;
+  text-shadow: red 2px 2px;
+}
+
+
 
 .playerArea {
   display: inline-block;

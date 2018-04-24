@@ -1,12 +1,13 @@
-<!-- luis suarez -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+        <link rel="shortcut icon" type="image/png" href="favicon.ico" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -28,11 +29,28 @@
         </div>
 
         <div class="pickArea">
-            <img class="character player enemy win" value="win" src="assets/images/win.gif" alt=""> 
+            
+            <div class="xp">
+            <img class="character player enemy win" value="win" src="assets/images/win.gif" alt="">
+            <br>
+            <p class="win xp">H:120 A:16</p>
+            </div>
+            <div class="xp">
             <img class="character player enemy mac" value="mac" src="assets/images/mac.gif" alt="">
+            <br>
+            <p class="mac xp">H:100 A:10</p>    
+        </div>
+            <div class="xp">
             <img class="character player enemy ubu" value="ubu" src="assets/images/ubu.gif" alt="">
+            <br>
+            <p class="ubu xp">H:160 A:14</p>    
+        </div>
+            <div class="xp">
             <img class="character player enemy and" value="and" src="assets/images/and.gif" alt="">
-        
+            <br>
+            <p class="and xp">H:140 A:18</p>  
+        </div>
+            
         </div>
         <br>
         <br>
@@ -45,14 +63,19 @@
             <div class="enemyHealth">
                 <div class="enemyDamage"></div>
             </div>
+            <br>
+            <div class="statsDiv">
+                <p class="stats statsPlayer"></p>
+                <p class="stats statsEnemy"></p></div>
         </div>
+        
         <div class="fightArea">
             <div class="actionArea">
                 <h1 class="btn">Fight!</h1>
             </div>
             <br>
-            <br>
-            <br>
+            
+            
             <br>
             <div class="playerArea">
                 <div class="playerImage">
